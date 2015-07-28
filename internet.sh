@@ -5,7 +5,10 @@
 # gsettings set org.gnome.system.proxy autoconfig-url "'http://168.219.61.251:8088/samsungcs.pac'"
 # gsettings set org.gnome.system.proxy mode "'auto'"
 
-sudo tee -a /etc/environment > /dev/null <<-EOS
+ENVIRONMENT=/etc/environment
+ENVIRONMENT_VALUES=`grep -vE "^(https?|ftp|no)_proxy=" $ENVIRONMENT`
+sudo tee $ENVIRONMENT > /dev/null <<-EOS
+$ENVIRONMENT_VALUES
 http_proxy=http://168.219.61.252:8080/
 ftp_proxy=ftp://168.219.61.252:8080/
 https_proxy=http://168.219.61.252:8080/
