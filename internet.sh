@@ -5,14 +5,14 @@
 # gsettings set org.gnome.system.proxy autoconfig-url "'http://168.219.61.251:8088/samsungcs.pac'"
 # gsettings set org.gnome.system.proxy mode "'auto'"
 
-sudo tee -a /etc/environments <<-EOS
+sudo tee -a /etc/environments > /dev/null <<-EOS
 http_proxy=http://168.219.61.252:8080/
 ftp_proxy=ftp://168.219.61.252:8080/
 https_proxy=http://168.219.61.252:8080/
 no_proxy=qb.sec.samsung.net,165.213.180.100,127.0.0.1,localhost
 EOS
 
-sudo tee /usr/share/ca-certificates/infra.crt <<-EOS
+sudo tee /usr/share/ca-certificates/infra.crt > /dev/null <<-EOS
 -----BEGIN CERTIFICATE-----
 MIIDvzCCAyigAwIBAgIJALMR2x1a2FCBMA0GCSqGSIb3DQEBBQUAMIGcMQswCQYD
 VQQGEwJLUjEUMBIGA1UECBMLR3llb25nZ2ktZG8xDjAMBgNVBAcTBVN1d29uMRww
