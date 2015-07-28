@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo http_proxy=http://168.219.61.252:8080/ apt-get install -y libglib2.0-bin
 gsettings set org.gnome.system.proxy autoconfig-url "'http://168.219.61.251:8088/samsungcs.pac'"
 gsettings set org.gnome.system.proxy mode "'auto'"
 sudo bash -c "cat > /usr/share/ca-certificates/infra.crt" <<-EOS
